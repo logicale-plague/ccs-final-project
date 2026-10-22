@@ -1,0 +1,50 @@
+{
+  "Vue 3 JS Component": {
+    "prefix": "vcomp",
+    "body": [
+      "<script setup>",
+      "import { computed, ref } from 'vue'",
+      "",
+      "const props = defineProps({",
+      "    ${1:title}: { type: ${2|String,Number,Boolean,Array,Object|}, default: ${3:''0} }",
+      "})",
+      "",
+      "const emit = defineEmits(['${4:click}'])",
+      "</script>",
+      "",
+      "<template>",
+      "    <div class=\"${5:container}\">",
+      "        $0",
+      "    </div>",
+      "</template>",
+      "",
+      "<style scoped>",
+      "",
+      "</style>"
+    ],
+    "description": "Create a standard Vue 3 Composition API SFC in JavaScript"
+  },
+  
+  "Vue Scaffold Page": {
+    "prefix": "vpage",
+    "body": [
+      "<script setup>",
+      "import { Scaffold, AppBar, Container } from '@/features/shared/components'",
+      "</script>",
+      "",
+      "<template>",
+      "    <Scaffold>",
+      "        <template #appBar>",
+      "            <AppBar title=\"${1:Page Title}\" :fixed=\"true\" />",
+      "        </template>",
+      "",
+      "        <Container :padding=\"20\" style=\"margin-top: 60px;\">",
+      "            <h1>${1:Page Title}</h1>",
+      "            $0",
+      "        </Container>",
+      "    </Scaffold>",
+      "</template>"
+    ],
+    "description": "Create a new page view wrapped in your custom Scaffold and AppBar"
+  }
+}

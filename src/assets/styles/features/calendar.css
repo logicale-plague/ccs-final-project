@@ -1,0 +1,52 @@
+:root {
+  --color-exam-bg: rgba(220, 38, 38, 0.12);
+  --color-exam-text: #dc2626;
+  --color-exam-dot: #dc2626;
+
+  --color-big-event-bg: rgba(64, 56, 212, 0.12);
+  --color-big-event-text: #4038d4;
+  --color-big-event-dot: #4038d4;
+
+  --color-prep-bg: rgba(217, 119, 6, 0.12);
+  --color-prep-text: #b45309;
+  --color-prep-dot: #d97706;
+
+  --color-small-event-bg: rgba(5, 150, 105, 0.12);
+  --color-small-event-text: #047857;
+  --color-small-event-dot: #059669;
+
+  --color-cpur-bg: rgba(124, 58, 237, 0.12);
+  --color-cpur-text: #b328d9;
+  --color-cpur-dot: #9c3aed;
+
+  --color-holiday-bg: rgba(8, 145, 178, 0.12);
+  --color-holiday-text: #0e7490;
+  --color-holiday-dot: #0891b2;
+}
+
+.dark,
+[data-theme='dark'] {
+  --color-exam-bg: rgba(248, 113, 113, 0.18);
+  --color-exam-text: #fca5a5;
+  --color-exam-dot: #f87171;
+
+  --color-big-event-bg: rgba(45, 91, 216, 0.18);
+  --color-big-event-text: #8fb0dc;
+  --color-big-event-dot: #2d5bd8;
+
+  --color-prep-bg: rgba(251, 191, 36, 0.18);
+  --color-prep-text: #fde047;
+  --color-prep-dot: #fbbf24;
+
+  --color-small-event-bg: rgba(52, 211, 153, 0.18);
+  --color-small-event-text: #6ee7b7;
+  --color-small-event-dot: #34d399;
+
+  --color-cpur-bg: rgba(167, 139, 250, 0.18);
+  --color-cpur-text: #c4b5fd;
+  --color-cpur-dot: #a78bfa;
+
+  --color-holiday-bg: rgba(34, 211, 238, 0.18);
+  --color-holiday-text: #67e8f9;
+  --color-holiday-dot: #22d3ee;
+}
