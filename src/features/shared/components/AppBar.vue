@@ -63,7 +63,7 @@ const colorClass = computed(() => {
         <slot name="leading" />
 
         <slot name="title">
-          <span 
+          <span
             class="navbar-brand mb-0 h5 fw-semibold"
             :style="{ color: props.textColor || undefined }"
           >

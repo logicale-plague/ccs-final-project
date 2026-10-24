@@ -17,7 +17,7 @@ const navItems = [
 
 /**
  * Navigates to a named location
- * @param {String} routeName 
+ * @param {String} routeName
  */
 function navigateTo(routeName) {
   router.push({ name: routeName })

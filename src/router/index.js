@@ -38,16 +38,16 @@ const router = createRouter({
           name: 'contact-us',
           component: () => import('@/features/05-contact-us/ContactUsView.vue'),
         },
-      ]
-    }
+      ],
+    },
   ],
 
   scrollBehavior(_to, _from, savedPosition) {
-      if (savedPosition) {
-          return savedPosition
-      }
+    if (savedPosition) {
+      return savedPosition
+    }
 
-      return { top: 0, behavior: 'smooth' }
+    return { top: 0, behavior: 'smooth' }
   },
 })
 
