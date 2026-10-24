@@ -4,8 +4,12 @@ import { computed } from 'vue'
 const props = defineProps({
   title: { type: String, default: '' },
   color: { type: String, default: '' }, // e.g., 'bg-white' or hex color
+  textColor: { type: String, default: '' }, // Title text color
   elevation: { type: String, default: 'sm' }, // 'none', 'sm', 'md', 'lg'
   fixed: { type: Boolean, default: false }, // Stays at top on scroll
+  bordered: { type: Boolean, default: true },
+  paddingX: { type: Number, default: 3 },
+  paddingY: { type: Number, default: 2 },
 })
 
 const barStyle = computed(() => {
@@ -15,6 +19,12 @@ const barStyle = computed(() => {
   if (props.color && (props.color.startsWith('#') || props.color.startsWith('rgb'))) {
     styles.backgroundColor = props.color
   }
+
+  styles.paddingLeft = `${props.paddingX}px`
+  styles.paddingRight = `${props.paddingX}px`
+  styles.paddingTop = `${props.paddingY}px`
+  styles.paddingBottom = `${props.paddingY}px`
+
   return styles
 })
 
@@ -41,9 +51,10 @@ const colorClass = computed(() => {
   <header
     :style="barStyle"
     :class="[
-      'navbar navbar-expand px-3 py-2 border-bottom custom-app-bar',
+      'navbar navbar-expand custom-app-bar',
       colorClass,
       shadowClass,
+      bordered ? 'border-bottom' : '',
       fixed ? 'fixed-top' : '',
     ]"
   >
@@ -52,7 +63,10 @@ const colorClass = computed(() => {
         <slot name="leading" />
 
         <slot name="title">
-          <span class="navbar-brand mb-0 h5 fw-semibold text-body">
+          <span 
+            class="navbar-brand mb-0 h5 fw-semibold"
+            :style="{ color: props.textColor || undefined }"
+          >
             {{ props.title }}
           </span>
         </slot>

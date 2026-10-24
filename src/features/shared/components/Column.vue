@@ -8,7 +8,7 @@ const props = defineProps({
   padding: { type: [Object, String, Number], default: null },
   spacing: { type: [Number, String], default: null },
   mainAxisAlignment: { type: String, default: 'start' },
-  crossAxisAlignment: { type: String, default: 'stretch' },
+  crossAxisAlignment: { type: String, default: 'start' },
   width: { type: [String, Number], default: null },
   height: { type: [String, Number], default: null },
 })
@@ -54,15 +54,15 @@ const mainAxisClass = computed(() => {
 
 const crossAxisClass = computed(() => {
   switch (props.crossAxisAlignment) {
-    case 'start':
-      return 'align-items-start'
     case 'end':
       return 'align-items-end'
     case 'center':
       return 'align-items-center'
     case 'stretch':
-    default:
       return 'align-items-stretch'
+    case 'start':
+    default:
+      return 'align-items-start'
   }
 })
 </script>

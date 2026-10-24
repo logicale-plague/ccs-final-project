@@ -14,6 +14,7 @@ const props = defineProps({
   borderColor: { type: String, default: '' },
   image: { type: String, default: '' },
   fit: { type: String, default: 'cover' },
+  overlay: { type: String, default: '' },
 })
 
 const containerStyle = computed(() => {
@@ -50,6 +51,14 @@ const containerStyle = computed(() => {
   }
 
   return styles
+})
+
+const overlayStyle = computed(() => {
+  if (!props.overlay) return {}
+
+  return {
+    backgroundColor: props.overlay,
+  }
 })
 
 const imageStyle = computed(() => {
@@ -107,7 +116,15 @@ const borderClass = computed(() => {
       class="position-absolute top-0 start-0 w-100 h-100"
       alt=""
     />
-    <div class="position-relative w-100 h-100 z-1">
+
+    <div
+      v-if="overlay"
+      :style="overlayStyle"
+      class="position-absolute top-0 start-0 w-100 h-100 z-1"
+      aria-hidden="true"
+    />
+
+    <div class="position-relative w-100 h-100 z-2">
       <slot />
     </div>
   </div>

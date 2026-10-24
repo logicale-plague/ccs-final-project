@@ -49,7 +49,7 @@ const buttonStyles = computed(() => {
     :class="[
       props.fullWidth ? 'w-100' : 'w-auto',
       props.fullHeight ? 'h-100 align-self-stretch' : 'h-auto',
-      'outlined-button btn px-3 py-2 d-flex flex-row align-items-center justify-content-center gap-2 transition-all cursor-pointer',
+      'outlined-button btn px-4 py-2 d-flex flex-row align-items-center justify-content-center gap-2 transition-all cursor-pointer',
     ]"
     @click="(e) => emit('click', e)"
   >

@@ -21,7 +21,9 @@ const buttonStyles = computed(() => {
   if (props.fontSize !== undefined) styles['--btn-font-size'] = `${props.fontSize}px`
   if (props.borderRadius !== undefined) styles['--btn-border-radius'] = `${props.borderRadius}px`
   if (props.fontColor) styles['--btn-font-color'] = props.fontColor
-  if (props.bgColor) styles['--btn-bg'] = props.bgColor
+  if (props.bgColor) {
+    styles['--btn-bg'] = props.bgColor
+  }
   if (props.hoverShadowColor) styles['--btn-hover-shadow'] = props.hoverShadowColor
 
   return styles
@@ -35,7 +37,7 @@ const buttonStyles = computed(() => {
     :class="[
       props.fullWidth ? 'w-100' : 'w-auto',
       props.fullHeight ? 'h-100 align-self-stretch' : 'h-auto',
-      'solid-button btn p-2 d-flex flex-row align-items-center justify-content-center gap-2',
+      'solid-button btn px-4 py-2 d-flex flex-row align-items-center justify-content-center gap-2',
     ]"
     @click="(e) => emit('click', e)"
   >
@@ -50,9 +52,12 @@ const buttonStyles = computed(() => {
   background-color: var(--btn-bg, #2e7d4f);
   border-radius: var(--btn-border-radius, 6px);
   border: none;
+  transition: opacity 0.2s ease;
 }
 
 .solid-button:hover {
+  background-color: var(--btn-bg, #2e7d4f);
+  opacity: 0.8;
   box-shadow: var(--btn-hover-shadow, -2px 2px 4px color-mix(in srgb, #0d0f0d, 25%, transparent));
 }
 
