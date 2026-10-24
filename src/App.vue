@@ -1,9 +1,9 @@
 <script setup>
-import HelloWorld from './features/HelloWorld.vue'
+import { RouterView } from 'vue-router';
 </script>
 
 <template>
-  <HelloWorld />
+  <RouterView />
 </template>
 
 <style scoped></style>

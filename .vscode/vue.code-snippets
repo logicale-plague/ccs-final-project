@@ -46,5 +46,16 @@
       "</template>"
     ],
     "description": "Create a new page view wrapped in your custom Scaffold and AppBar"
+  },
+
+  "Path Code": {
+    "prefix": "path",
+    "body": [
+      "{",
+      "  path: '${1:path}',",
+      "  name: '${1:path}',",
+      "  component: () => import('@/features/${2:path/to/file}'),",
+      "},"
+    ]
   }
 }
