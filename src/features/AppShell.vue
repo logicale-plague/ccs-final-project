@@ -1,10 +1,11 @@
 ```vue
 <script setup>
 import { Scaffold, AppBar, Container, Row, TabButton } from '@/features/shared/components'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
+import { navigateTo } from '@/router/index.js'
+import { onMounted, onUnmounted, ref } from 'vue'
 
 const route = useRoute()
-const router = useRouter()
 
 const navItems = [
   { label: 'Home', to: 'home' },
@@ -15,13 +16,21 @@ const navItems = [
   { label: 'Contact Us', to: 'contact-us' },
 ]
 
-/**
- * Navigates to a named location
- * @param {String} routeName
- */
-function navigateTo(routeName) {
-  router.push({ name: routeName })
+const isScrolled = ref(false)
+
+function handleScroll() {
+  isScrolled.value = window.scrollY > 15
 }
+
+onMounted(() => {
+  handleScroll()
+  window.addEventListener('scroll', handleScroll, { passive: true })
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll)
+})
+
 </script>
 
 <template>
@@ -30,19 +39,19 @@ function navigateTo(routeName) {
       <AppBar
         title="College of Computer Studies"
         :fixed="true"
-        color="bg-transparent"
-        textColor="#ffffff"
-        elevation="none"
-        :bordered="false"
+        :color="isScrolled ? 'var(--app-bar-background)' : 'transparent'"
+        :textColor="isScrolled ? 'var(--app-bar-foreground)' : '#ffffff'"
+        :elevation="isScrolled ? 'md' : 'none'"
+        :bordered="isScrolled"
         :paddingX="96"
-        :paddingY="16"
+        :paddingY="isScrolled ? 8 : 16"
       >
         <template #leading>
           <img
             src="@/assets/logos/cropped-CCS-Logov-new.png"
             alt="College of Computer Studies logo"
-            width="60"
-            height="60"
+            :width="isScrolled ? 48 : 60"
+            :height="isScrolled ? 48 : 60"
           />
         </template>
 
@@ -52,9 +61,15 @@ function navigateTo(routeName) {
               v-for="item in navItems"
               :key="item.to"
               :label="item.label"
-              :bottomBarColor="route.name === item.to ? '#FFB024' : 'transparent'"
-              bottomBarHoverColor="#FFB024"
-              :fontColor="route.name === item.to ? '#FFB024' : '#ffffff'"
+              :bottomBarColor="route.name === item.to ? 'var(--primary)' : 'transparent'"
+              bottomBarHoverColor="var(--primary)"
+              :fontColor="
+                route.name === item.to
+                  ? 'var(--primary)'
+                  : isScrolled
+                    ? 'var(--app-bar-foreground)'
+                    : '#ffffff'
+              "
               @click="navigateTo(item.to)"
             />
           </Row>
@@ -71,4 +86,3 @@ function navigateTo(routeName) {
     </Container>
   </Scaffold>
 </template>
-```
