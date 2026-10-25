@@ -78,7 +78,6 @@ const shadowStyle = computed(() => {
   </header>
 </template>
 
-
 <style scoped>
 .custom-app-bar {
   z-index: 1030;

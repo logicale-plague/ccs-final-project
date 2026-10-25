@@ -5,7 +5,7 @@ export { default as Card } from './Card.vue'
 export { default as Column } from './Column.vue'
 export { default as Container } from './Container.vue'
 export { default as Headline } from './Headline.vue'
-export {default as ImageContainer} from './ImageContainer.vue'
+export { default as ImageContainer } from './ImageContainer.vue'
 
 export { default as OutlinedButton } from './OutlinedButton.vue'
 export { default as Row } from './Row.vue'

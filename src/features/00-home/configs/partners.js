@@ -9,40 +9,40 @@ import lasortech from '@/assets/logos/partners/lasortech.jpg'
 import startup from '@/assets/logos/partners/startupproject.jpg'
 
 export const partners = [
-    {
-        name: 'Oracle Academy',
-        src: oracle
-    },
-    {
-        name: 'Cisco Networking Academy',
-        src: cisco
-    },
-    {
-        name: 'Acer Academy',
-        src: acer
-    },
-    {
-        name: 'Huawei ICT Academy',
-        src: huawei
-    },
-    {
-        name: 'PSITE',
-        src: psite
-    },
-    {
-        name: 'Govesmart',
-        src: govesmart
-    },
-    {
-        name: 'Mayad',
-        src: mayad
-    },
-    {
-        name: 'Lasortech',
-        src: lasortech
-    },
-    {
-        name: 'Startup Project Ventures',
-        src: startup
-    },
+  {
+    name: 'Oracle Academy',
+    src: oracle,
+  },
+  {
+    name: 'Cisco Networking Academy',
+    src: cisco,
+  },
+  {
+    name: 'Acer Academy',
+    src: acer,
+  },
+  {
+    name: 'Huawei ICT Academy',
+    src: huawei,
+  },
+  {
+    name: 'PSITE',
+    src: psite,
+  },
+  {
+    name: 'Govesmart',
+    src: govesmart,
+  },
+  {
+    name: 'Mayad',
+    src: mayad,
+  },
+  {
+    name: 'Lasortech',
+    src: lasortech,
+  },
+  {
+    name: 'Startup Project Ventures',
+    src: startup,
+  },
 ]

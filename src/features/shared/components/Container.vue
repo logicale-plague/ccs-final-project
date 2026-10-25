@@ -84,9 +84,7 @@ const alignmentClass = computed(() => {
   }
 })
 
-const colorClass = computed(() =>
-  props.color.startsWith('bg-') ? props.color : '',
-)
+const colorClass = computed(() => (props.color.startsWith('bg-') ? props.color : ''))
 
 const borderClass = computed(() => {
   if (props.borderColor.startsWith('border-')) {

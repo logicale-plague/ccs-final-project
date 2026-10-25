@@ -1,49 +1,43 @@
 <script setup>
-import { Container, Row, Card, Column, Text } from '@/features/shared/components';
-import { programs } from '../configs/programs';
+import { Container, Row, Card, Column, Text } from '@/features/shared/components'
+import { programs } from '../configs/programs'
 </script>
 
 <template>
-    <Container width="100%" :padding="{ x: 192, y: 64 }" color="var(--background)" class="org-section">
-      <Column
-        width="100%"
-        :spacing="24"
-        cross-axis-alignment="center"
-      >
-        <Text value="Explore Our Academic Programs" :size="48" weight="bold" color="var(--foreground)" :align="'center'" />
-        <Row 
-          width="100%" 
-          main-axis-alignment="around"
-          :spacing="24"
-          cross-axis-alignment="stretch"
+  <Container
+    width="100%"
+    :padding="{ x: 192, y: 64 }"
+    color="var(--background)"
+    class="org-section"
+  >
+    <Column width="100%" :spacing="24" cross-axis-alignment="center">
+      <Text
+        value="Explore Our Academic Programs"
+        :size="48"
+        weight="bold"
+        color="var(--foreground)"
+        :align="'center'"
+      />
+      <Row width="100%" main-axis-alignment="around" :spacing="24" cross-axis-alignment="stretch">
+        <Card
+          v-for="program in programs"
+          :key="program.to"
+          border-color="var(--border)"
+          color="var(--card)"
+          width="100%"
+          @click="program.to"
         >
-          <Card 
-            v-for="program in programs"
-            border-color="var(--border)"
-            color="var(--card)"
-            width="100%"
-            @click="program.to"
-          >
-            <Column
-              :spacing="16"
-              cross-axis-alignment="center"
-              :margin="20"
-            >
-              <div class="program-logo">
-                <img
-                  :src="program.image"
-                  :alt="program.title"
-                  width="160"
-                  height="160"
-                />
-              </div>
-              <Text :value="program.title" :size="24" weight="bold" color="#000" :align="'center'"/>
-              <Text :value="program.subtitle" :size="16" color="#4a5568" :align="'center'"/>
-            </Column>
-          </Card>
-        </Row>
-      </Column>
-    </Container>
+          <Column :spacing="16" cross-axis-alignment="center" :margin="20">
+            <div class="program-logo">
+              <img :src="program.image" :alt="program.title" width="160" height="160" />
+            </div>
+            <Text :value="program.title" :size="24" weight="bold" color="#000" :align="'center'" />
+            <Text :value="program.subtitle" :size="16" color="#4a5568" :align="'center'" />
+          </Column>
+        </Card>
+      </Row>
+    </Column>
+  </Container>
 </template>
 
 <style scoped>
@@ -54,7 +48,7 @@ import { programs } from '../configs/programs';
 }
 
 .org-section::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 50%;

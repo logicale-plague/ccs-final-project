@@ -1,14 +1,14 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <script setup>
-import { computed } from 'vue'
 import { Icon } from '@iconify/vue'
 import { ImageContainer, Row } from './index.js'
 
-const props = defineProps({
-  title: { type: String, default: 'Article Title'},
-  excerpt: { type: String, default: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'},
-  publishDate: { type: String, default: 'January 1, 2000 · 00:00 AM'},
-  src: { type: String, default: ''},
-  borderColor: { type: String, default: '#d4d4d4'},
+defineProps({
+  title: { type: String, default: 'Article Title' },
+  excerpt: { type: String, default: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
+  publishDate: { type: String, default: 'January 1, 2000 · 00:00 AM' },
+  src: { type: String, default: '' },
+  borderColor: { type: String, default: '#d4d4d4' },
 })
 
 const emit = defineEmits(['view'])
@@ -35,12 +35,7 @@ function handleKeydown(event) {
     @keydown="handleKeydown"
   >
     <div class="headline-image">
-      <ImageContainer
-        :src="src"
-        :alt="title"
-        width="100%"
-        height="360px"
-      />
+      <ImageContainer :src="src" :alt="title" width="100%" height="360px" />
     </div>
 
     <div class="headline-content d-flex flex-column align-items-start gap-2 p-2">
@@ -52,16 +47,10 @@ function handleKeydown(event) {
         {{ excerpt }}
       </p>
 
-      <Row 
-        :spacing="4"
-      >
-        <Icon
-            icon="oi:clock" 
-            :width="10"
-            :height="10"
-        />
+      <Row :spacing="4">
+        <Icon icon="oi:clock" :width="10" :height="10" />
         <p class="headline-date mb-0">
-            {{ publishDate }}
+          {{ publishDate }}
         </p>
       </Row>
     </div>

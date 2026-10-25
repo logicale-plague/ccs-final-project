@@ -1,8 +1,4 @@
-<script setup>
-import { ref } from 'vue'
-
-const videoSrc = ref('@/assets/videos/ccspromotional.mp4')
-</script>
+<script setup></script>
 
 <template>
   <section class="promotion-section" aria-label="Discover CCS">

@@ -22,11 +22,7 @@ const imageStyle = computed(() => ({
     :style="imageStyle"
   >
     <div class="image-zoom-wrapper w-100 h-100">
-      <img
-        :src="props.src"
-        :alt="props.alt"
-        class="w-100 h-100 object-fit-cover"
-      />
+      <img :src="props.src" :alt="props.alt" class="w-100 h-100 object-fit-cover" />
     </div>
 
     <div
@@ -55,11 +51,7 @@ const imageStyle = computed(() => ({
 }
 
 .image-overlay {
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    rgb(0 0 0 / 80%) 100%
-  );
+  background: linear-gradient(to bottom, transparent 0%, rgb(0 0 0 / 80%) 100%);
   opacity: 1;
   transition: opacity 300ms ease;
 }

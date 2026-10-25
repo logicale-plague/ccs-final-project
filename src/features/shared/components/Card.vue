@@ -43,9 +43,7 @@ const cardStyle = computed(() => {
 
   if (props.borderWidth !== null) {
     styles.borderWidth =
-      typeof props.borderWidth === 'number'
-        ? `${props.borderWidth}px`
-        : props.borderWidth
+      typeof props.borderWidth === 'number' ? `${props.borderWidth}px` : props.borderWidth
 
     styles.borderStyle = 'solid'
   }
@@ -81,21 +79,14 @@ const borderClass = computed(() => {
     return props.borderColor
   }
 
-  return props.borderWidth !== null || props.borderColor
-    ? 'border'
-    : 'border-0'
+  return props.borderWidth !== null || props.borderColor ? 'border' : 'border-0'
 })
 </script>
 
 <template>
-  <div 
-    :style="cardStyle" 
-    :class="[
-        'card card-hover', 
-        shadowClass, 
-        colorClass, 
-        borderClass
-      ]"
+  <div
+    :style="cardStyle"
+    :class="['card card-hover', shadowClass, colorClass, borderClass]"
     @click="(e) => emit('click', e)"
   >
     <div class="card-body">
