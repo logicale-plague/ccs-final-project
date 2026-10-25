@@ -19,7 +19,7 @@ const textStyle = computed(() => {
   if (props.weight !== '') {
     styles.fontWeight = typeof props.weight === 'number' ? `${props.weight}` : props.weight
   }
-  if (props.color && (props.color.startsWith('#') || props.color.startsWith('rgb'))) {
+  if (props.color && !props.color.startsWith('text-')) {
     styles.color = props.color
   }
   return styles

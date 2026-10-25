@@ -15,6 +15,8 @@ const props = defineProps({
   height: { type: [String, Number], default: null },
 })
 
+const emit = defineEmits(['click'])
+
 const cardStyle = computed(() => {
   /** @type {Record<string, string>} */
   const styles = {}
@@ -35,19 +37,18 @@ const cardStyle = computed(() => {
   const m = parseSpacing(props.margin)
   if (m) styles.margin = m
 
-  if (props.color && (props.color.startsWith('#') || props.color.startsWith('rgb'))) {
+  if (props.color && !props.color.startsWith('bg-')) {
     styles.backgroundColor = props.color
   }
 
   if (props.borderWidth !== null) {
     styles.borderWidth =
       typeof props.borderWidth === 'number' ? `${props.borderWidth}px` : props.borderWidth
+
     styles.borderStyle = 'solid'
   }
-  if (
-    props.borderColor &&
-    (props.borderColor.startsWith('#') || props.borderColor.startsWith('rgb'))
-  ) {
+
+  if (props.borderColor && !props.borderColor.startsWith('border-')) {
     styles.borderColor = props.borderColor
     styles.borderStyle = 'solid'
   }
@@ -74,17 +75,65 @@ const colorClass = computed(() => {
 })
 
 const borderClass = computed(() => {
-  if (props.borderColor && props.borderColor.startsWith('border-')) {
+  if (props.borderColor.startsWith('border-')) {
     return props.borderColor
   }
-  return props.borderWidth !== null ? 'border' : 'border-0'
+
+  return props.borderWidth !== null || props.borderColor ? 'border' : 'border-0'
 })
 </script>
 
 <template>
-  <div :style="cardStyle" :class="['card border-0', shadowClass, colorClass, borderClass]">
+  <div
+    :style="cardStyle"
+    :class="['card card-hover', shadowClass, colorClass, borderClass]"
+    @click="(e) => emit('click', e)"
+  >
     <div class="card-body">
       <slot />
     </div>
   </div>
 </template>
+
+<style scoped>
+.card-hover {
+  transition:
+    box-shadow var(--transition-normal),
+    transform var(--transition-normal);
+  cursor: pointer;
+}
+
+.card-hover.shadow-sm {
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.card-hover.shadow {
+  box-shadow: var(--shadow-md) !important;
+}
+
+.card-hover.shadow-lg {
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.card-hover:hover {
+  box-shadow: var(--shadow-lg) !important;
+}
+
+.card-hover :deep(.program-logo) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-normal);
+}
+
+.card-hover:hover :deep(.program-logo) {
+  transform: scale(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-hover,
+  .card-hover :deep(.program-logo) {
+    transition: none;
+  }
+}
+</style>
