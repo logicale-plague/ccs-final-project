@@ -16,44 +16,42 @@ const barStyle = computed(() => {
   /** @type {Record<string, string>} */
   const styles = {}
 
-  if (props.color && (props.color.startsWith('#') || props.color.startsWith('rgb'))) {
-    styles.backgroundColor = props.color
-  }
-
   styles.paddingLeft = `${props.paddingX}px`
   styles.paddingRight = `${props.paddingX}px`
   styles.paddingTop = `${props.paddingY}px`
   styles.paddingBottom = `${props.paddingY}px`
 
+  if (props.color && !props.color.startsWith('bg-')) {
+    styles.backgroundColor = props.color
+  }
+
+  if (props.textColor) {
+    styles.color = props.textColor
+  }
+
   return styles
 })
 
-const shadowClass = computed(() => {
+const shadowStyle = computed(() => {
   switch (props.elevation) {
     case 'lg':
-      return 'shadow-lg'
+      return { boxShadow: 'var(--shadow-lg)' }
     case 'md':
-      return 'shadow'
+      return { boxShadow: 'var(--shadow-md)' }
     case 'none':
-      return 'shadow-none'
+      return { boxShadow: 'none' }
     case 'sm':
     default:
-      return 'shadow-sm'
+      return { boxShadow: 'var(--shadow-sm)' }
   }
-})
-
-const colorClass = computed(() => {
-  return props.color && props.color.startsWith('bg-') ? props.color : 'bg-body'
 })
 </script>
 
 <template>
   <header
-    :style="barStyle"
+    :style="{ ...barStyle, ...shadowStyle }"
     :class="[
       'navbar navbar-expand custom-app-bar',
-      colorClass,
-      shadowClass,
       bordered ? 'border-bottom' : '',
       fixed ? 'fixed-top' : '',
     ]"
@@ -80,8 +78,21 @@ const colorClass = computed(() => {
   </header>
 </template>
 
+
 <style scoped>
 .custom-app-bar {
   z-index: 1030;
+  transition:
+    background-color var(--transition-normal),
+    padding var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.custom-app-bar .navbar-brand,
+.custom-app-bar img {
+  transition:
+    color var(--transition-normal),
+    width var(--transition-normal),
+    height var(--transition-normal);
 }
 </style>

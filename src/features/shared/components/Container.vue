@@ -33,7 +33,7 @@ const containerStyle = computed(() => {
   const m = parseSpacing(props.margin)
   if (m) styles.margin = m
 
-  if (props.color && (props.color.startsWith('#') || props.color.startsWith('rgb'))) {
+  if (props.color && !props.color.startsWith('bg-')) {
     styles.backgroundColor = props.color
   }
 
@@ -42,10 +42,8 @@ const containerStyle = computed(() => {
       typeof props.borderWidth === 'number' ? `${props.borderWidth}px` : props.borderWidth
     styles.borderStyle = 'solid'
   }
-  if (
-    props.borderColor &&
-    (props.borderColor.startsWith('#') || props.borderColor.startsWith('rgb'))
-  ) {
+
+  if (props.borderColor && !props.borderColor.startsWith('border-')) {
     styles.borderColor = props.borderColor
     styles.borderStyle = 'solid'
   }
@@ -86,16 +84,16 @@ const alignmentClass = computed(() => {
   }
 })
 
-const colorClass = computed(() => {
-  return props.color && props.color.startsWith('bg-') ? props.color : ''
-})
+const colorClass = computed(() =>
+  props.color.startsWith('bg-') ? props.color : '',
+)
 
 const borderClass = computed(() => {
-  return props.borderColor && props.borderColor.startsWith('border-')
-    ? props.borderColor
-    : props.borderWidth !== null
-      ? 'border'
-      : ''
+  if (props.borderColor.startsWith('border-')) {
+    return props.borderColor
+  }
+
+  return props.borderWidth !== null ? 'border' : ''
 })
 </script>
 
