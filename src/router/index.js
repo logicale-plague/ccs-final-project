@@ -7,6 +7,7 @@ const router = createRouter({
     {
       path: '/',
       component: AppShell,
+      redirect: { name: 'home' },
       children: [
         {
           path: 'home',
@@ -52,3 +53,11 @@ const router = createRouter({
 })
 
 export default router
+
+/**
+ * Navigates to a named location
+ * @param {String} routeName
+ */
+export function navigateTo(routeName) {
+  router.push({ name: routeName })
+}
