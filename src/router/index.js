@@ -50,6 +50,26 @@ const router = createRouter({
           component: () => import('@/features/02-academic-programs/AcademicProgramsView.vue'),
         },
         {
+          path: 'academic-programs/computer-science',
+          name: 'comp-sci',
+          component: () => import('@/features/02-academic-programs/programs/ComputerScience.vue'),
+        },
+        {
+          path: 'academic-programs/information-technology',
+          name: 'info-tech',
+          component: () => import('@/features/02-academic-programs/programs/InformationTech.vue'),
+        },
+        {
+          path: 'academic-programs/digital-media-arts',
+          name: 'media-arts',
+          component: () => import('@/features/02-academic-programs/programs/DigitalMediaArts.vue'),
+        },
+        {
+          path: 'academic-programs/library-information-science',
+          name: 'lib-sci',
+          component: () => import('@/features/02-academic-programs/programs/LibraryScience.vue'),
+        },
+        {
           path: 'faculty-and-staff',
           name: 'faculty-and-staff',
           component: () => import('@/features/03-faculty-and-staff/FacultyStaffView.vue'),
