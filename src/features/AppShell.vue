@@ -145,7 +145,6 @@ onUnmounted(() => {
               </div>
             </div>
 
-            <TabButton
             <div
               v-for="item in navItems"
               :key="item.label"
