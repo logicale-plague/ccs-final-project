@@ -9,9 +9,6 @@ import FooterSection from './00-home/components/FooterSection.vue'
 const route = useRoute()
 
 const navItems = [
-  { label: 'Academic Programs', to: 'academic-programs' },
-  { label: 'Home', to: 'home' },
-  { label: 'About Us', to: 'about-us' },
   {
     label: 'Academic Programs',
     to: 'academic-programs',
@@ -235,6 +232,9 @@ onUnmounted(() => {
   .about-dropdown {
     right: auto;
     left: 0;
+  }
+}
+
 .nav-item {
   position: relative;
 }

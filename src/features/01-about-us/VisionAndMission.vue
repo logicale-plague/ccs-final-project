@@ -1,5 +1,5 @@
 <script setup>
-import { Card, Container } from '@/features/shared/components'
+import { Card, Column, Container } from '@/features/shared/components'
 
 const sections = [
   {
@@ -25,24 +25,37 @@ const sections = [
 </script>
 
 <template>
-  <Container padding="112px 24px 48px">
-    <Card shadow="sm" :borderWidth="1" borderColor="var(--border)" :padding="32">
-      <h1 class="vision-mission-title">Vision and Mission</h1>
-
-      <section v-for="section in sections" :key="section.title" class="vision-mission-section">
-        <h2>{{ section.title }}</h2>
-        <p v-for="paragraph in section.paragraphs" :key="paragraph">
-          {{ paragraph }}
-        </p>
-      </section>
-    </Card>
+  <Container>
+    <Column :spacing="32" :margin="{ bottom: 64 }">
+      <Container
+        color="var(--secondary)"
+        :padding="{ left: 192, top: 96, bottom: 64 }"
+        width="100%"
+      >
+        <h1 class="vision-mission-title">Vision and Mission</h1>
+      </Container>
+      <Card
+        shadow="sm"
+        :borderWidth="1"
+        borderColor="var(--border)"
+        :padding="32"
+        :margin="{ x: 96 }"
+      >
+        <section v-for="section in sections" :key="section.title" class="vision-mission-section">
+          <h2>{{ section.title }}</h2>
+          <p v-for="paragraph in section.paragraphs" :key="paragraph">
+            {{ paragraph }}
+          </p>
+        </section>
+      </Card>
+    </Column>
   </Container>
 </template>
 
 <style scoped>
 .vision-mission-title {
-  margin-bottom: 32px;
-  color: var(--foreground);
+  margin: 0;
+  color: var(--secondary-foreground);
   font-size: 36px;
   font-weight: 700;
 }

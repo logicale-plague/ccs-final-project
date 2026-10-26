@@ -1,5 +1,5 @@
 <script setup>
-import { Card, Container } from '@/features/shared/components'
+import { Card, Column, Container } from '@/features/shared/components'
 
 const messageParagraphs = [
   'In every school year for the College of Computer Studies, we look forward with great anticipation to the contributions the new class will make to campus life. In both the aspect of academic and non academic, each students is unique enough to achieve whatever they want to reach for in our college.',
@@ -10,28 +10,41 @@ const messageParagraphs = [
 </script>
 
 <template>
-  <Container padding="112px 24px 48px">
-    <Card shadow="sm" :borderWidth="1" borderColor="var(--border)" :padding="32">
-      <h1 class="dean-message-title">Message Of The Dean</h1>
+  <Container>
+    <Column :spacing="32" :margin="{ bottom: 96 }">
+      <Container
+        color="var(--secondary)"
+        :padding="{ top: 96, bottom: 64, left: 192 }"
+        width="100%"
+      >
+        <h1 class="dean-message-title">Message Of The Dean</h1>
+      </Container>
+      <Card
+        shadow="sm"
+        :borderWidth="1"
+        borderColor="var(--border)"
+        :padding="32"
+        :margin="{ x: 96 }"
+      >
+        <div class="dean-message-content">
+          <p v-for="paragraph in messageParagraphs" :key="paragraph">
+            {{ paragraph }}
+          </p>
 
-      <div class="dean-message-content">
-        <p v-for="paragraph in messageParagraphs" :key="paragraph">
-          {{ paragraph }}
-        </p>
-
-        <div class="dean-attribution">
-          <strong>Ma. Christina A. Quijano, MSCS</strong>
-          <strong>Dean</strong>
+          <div class="dean-attribution">
+            <strong>Ma. Christina A. Quijano, MSCS</strong>
+            <strong>Dean</strong>
+          </div>
         </div>
-      </div>
-    </Card>
+      </Card>
+    </Column>
   </Container>
 </template>
 
 <style scoped>
 .dean-message-title {
-  margin-bottom: 32px;
-  color: var(--foreground);
+  margin: 0;
+  color: var(--secondary-foreground);
   font-size: 36px;
   font-weight: 700;
 }
