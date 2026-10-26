@@ -1,6 +1,7 @@
 <script setup>
 import { Container, Row, Card, Column, Text } from '@/features/shared/components'
 import { programs } from '../configs/programs'
+import { navigateTo } from '@/router'
 </script>
 
 <template>
@@ -25,7 +26,7 @@ import { programs } from '../configs/programs'
           border-color="var(--border)"
           color="var(--card)"
           width="100%"
-          @click="program.to"
+          @click="navigateTo(program.to)"
         >
           <Column :spacing="16" cross-axis-alignment="center" :margin="20">
             <div class="program-logo">
