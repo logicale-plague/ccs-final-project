@@ -37,8 +37,7 @@ const router = createRouter({
         {
           path: 'academic-programs/digital-media-arts',
           name: 'media-arts',
-          component: () =>
-            import('@/features/02-academic-programs/programs/DigitalMediaArts.vue'),
+          component: () => import('@/features/02-academic-programs/programs/DigitalMediaArts.vue'),
         },
         {
           path: 'academic-programs/library-information-science',

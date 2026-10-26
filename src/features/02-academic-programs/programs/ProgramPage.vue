@@ -34,7 +34,11 @@ defineProps({
     </Container>
 
     <div class="program-content">
-      <section v-if="educObjectives" class="program-section" aria-labelledby="educational-objectives">
+      <section
+        v-if="educObjectives"
+        class="program-section"
+        aria-labelledby="educational-objectives"
+      >
         <h2 id="educational-objectives">Program Educational Objectives</h2>
         <p v-html="educObjectives" />
       </section>
@@ -65,7 +69,12 @@ defineProps({
         <h2 id="graduate-outcomes">Graduate Outcomes</h2>
         <div class="outcomes-table-wrapper">
           <table class="outcomes-table">
-            <caption class="visually-hidden">{{ course }} graduate outcomes</caption>
+            <caption class="visually-hidden">
+              {{
+                course
+              }}
+              graduate outcomes
+            </caption>
             <thead>
               <tr>
                 <th scope="col">Outcome</th>

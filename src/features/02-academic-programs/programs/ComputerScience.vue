@@ -17,20 +17,62 @@ const competenceAreas = [
   'Social Issues and Professional Practice',
 ]
 
-const educObjectives = "1. Exhibit skills, knowledge and leadership to excel in their information technology careers and related discipline.<br>2. Exhibit high standard of professionalism who are effective members of multi-discipline development teams<br>3. Involved in scholarly activities, research and outreach that contributes to the improvement and transformation of society<br>4. Demonstrate ethical, professional, spiritual values, and social responsibility associated with their Information Technology careers and related professions.<br>5. Exhibit proficiency in the use of traditional and digital media arts, designing, developing and implementing digital media solutions in fields of entertainment and corporate environments."
-const programOutcomes = "<strong>The graduates have the ability to</strong><br>a) articulate and  discuss the  latest developments  in the  specific field  of practice.    (Philippine Qualifications Framework (PQF) level 6 descriptor)  (Graduate Outcomes:  CS 10, IS 10, IT13).<br>b) effectively communicate orally and in writing using both English and Filipino (Graduate Outcomes:  CS08,  1508,  IT10).<br>c) work effectively  and  independently  in   multi-disciplinary  and multi-cultural teams. (PQF level 6 descriptor) (Graduate Outcomes:  CS07, ISO?, IT08).<br>d) act in recognition of professional, social and ethical responsibility (Graduate Outcomes:CS09, 1509,  IT12)<br>e) preserve and promote “Filipino  historical  and cultural heritage” (based  on RA 7722).<br><strong>The graduates of BSCS, BSIS, and BSIT must have the ability to</strong><br>a) analyze complex problems, and   identify and   define the computing requirements   needed  to  design  an  appropriate solution  (Graduate Outcomes:CS02, 1502-03,  IT03).<br>b) apply  computing   and  other  knowledge  domains  to  address real-world  problems (Graduate Outcomes:  CSO 1,  1501,  IT01).<br>c) design and  develop computing solutions using  a system-level perspective  (Graduate  Outcomes:  CS03-05,  1504-05,  IT05).<br>d) utilize modern computing tools  (Graduate  Outcomes:   CSOS, ISOS,  IT07)."
+const educObjectives =
+  '1. Exhibit skills, knowledge and leadership to excel in their information technology careers and related discipline.<br>2. Exhibit high standard of professionalism who are effective members of multi-discipline development teams<br>3. Involved in scholarly activities, research and outreach that contributes to the improvement and transformation of society<br>4. Demonstrate ethical, professional, spiritual values, and social responsibility associated with their Information Technology careers and related professions.<br>5. Exhibit proficiency in the use of traditional and digital media arts, designing, developing and implementing digital media solutions in fields of entertainment and corporate environments.'
+const programOutcomes =
+  '<strong>The graduates have the ability to</strong><br>a) articulate and  discuss the  latest developments  in the  specific field  of practice.    (Philippine Qualifications Framework (PQF) level 6 descriptor)  (Graduate Outcomes:  CS 10, IS 10, IT13).<br>b) effectively communicate orally and in writing using both English and Filipino (Graduate Outcomes:  CS08,  1508,  IT10).<br>c) work effectively  and  independently  in   multi-disciplinary  and multi-cultural teams. (PQF level 6 descriptor) (Graduate Outcomes:  CS07, ISO?, IT08).<br>d) act in recognition of professional, social and ethical responsibility (Graduate Outcomes:CS09, 1509,  IT12)<br>e) preserve and promote “Filipino  historical  and cultural heritage” (based  on RA 7722).<br><strong>The graduates of BSCS, BSIS, and BSIT must have the ability to</strong><br>a) analyze complex problems, and   identify and   define the computing requirements   needed  to  design  an  appropriate solution  (Graduate Outcomes:CS02, 1502-03,  IT03).<br>b) apply  computing   and  other  knowledge  domains  to  address real-world  problems (Graduate Outcomes:  CSO 1,  1501,  IT01).<br>c) design and  develop computing solutions using  a system-level perspective  (Graduate  Outcomes:  CS03-05,  1504-05,  IT05).<br>d) utilize modern computing tools  (Graduate  Outcomes:   CSOS, ISOS,  IT07).'
 
 const graduateOutcomes = [
-  { outcome: 'CS01', description: 'Apply knowledge of computing fundamentals, knowledge of a computing specialization, and mathematics, science, and domain knowledge appropriate for the computing specialization to the abstraction and conceptualization of computing models from defined problems and requirements.' },
-  { outcome: 'CS02', description: 'Identify, analyze, formulate, research literature, and solve complex computing problems and requirements reaching substantiated conclusions using fundamental principles of mathematics, computing sciences, and relevant domain disciplines.' },
-  { outcome: 'CS03', description: 'An ability to apply mathematical foundations, algorithmic principles and computer science theory in the modeling and design of computer-based systems in a way that demonstrates comprehension of the tradeoffs involved in decision choices.' },
-  { outcome: 'CS04', description: 'Knowledge and understanding of information security issues in relation to the design, development and use of information systems.' },
-  { outcome: 'CS05', description: 'Design and evaluate solutions for complex computing problems, and design and evaluate systems, components, or processes that meet specified needs with appropriate consideration for public health and safety, cultural, societal, and environmental considerations.' },
-  { outcome: 'CS06', description: 'Create, select, adapt and apply appropriate techniques, resources and modern computing tools to complex computing activities, with an understanding of the limitations to accomplish a common goal.' },
-  { outcome: 'CS07', description: 'Function effectively as an individual and as a member or leader in diverse teams and in multidisciplinary settings.' },
-  { outcome: 'CS08', description: 'Communicate effectively with the computing community and with society at large about complex computing activities by being able to comprehend and write effective reports, design documentation, make effective presentations, and give and understand clear instructions.' },
-  { outcome: 'CS09', description: 'An ability to recognize the legal, social, ethical and professional issues involved in the utilization of computer technology and be guided by the adoption of appropriate professional, ethical and legal practices.' },
-  { outcome: 'CS10', description: 'Recognize the need, and have the ability, to engage in independent learning for continual development as a computing professional.' },
+  {
+    outcome: 'CS01',
+    description:
+      'Apply knowledge of computing fundamentals, knowledge of a computing specialization, and mathematics, science, and domain knowledge appropriate for the computing specialization to the abstraction and conceptualization of computing models from defined problems and requirements.',
+  },
+  {
+    outcome: 'CS02',
+    description:
+      'Identify, analyze, formulate, research literature, and solve complex computing problems and requirements reaching substantiated conclusions using fundamental principles of mathematics, computing sciences, and relevant domain disciplines.',
+  },
+  {
+    outcome: 'CS03',
+    description:
+      'An ability to apply mathematical foundations, algorithmic principles and computer science theory in the modeling and design of computer-based systems in a way that demonstrates comprehension of the tradeoffs involved in decision choices.',
+  },
+  {
+    outcome: 'CS04',
+    description:
+      'Knowledge and understanding of information security issues in relation to the design, development and use of information systems.',
+  },
+  {
+    outcome: 'CS05',
+    description:
+      'Design and evaluate solutions for complex computing problems, and design and evaluate systems, components, or processes that meet specified needs with appropriate consideration for public health and safety, cultural, societal, and environmental considerations.',
+  },
+  {
+    outcome: 'CS06',
+    description:
+      'Create, select, adapt and apply appropriate techniques, resources and modern computing tools to complex computing activities, with an understanding of the limitations to accomplish a common goal.',
+  },
+  {
+    outcome: 'CS07',
+    description:
+      'Function effectively as an individual and as a member or leader in diverse teams and in multidisciplinary settings.',
+  },
+  {
+    outcome: 'CS08',
+    description:
+      'Communicate effectively with the computing community and with society at large about complex computing activities by being able to comprehend and write effective reports, design documentation, make effective presentations, and give and understand clear instructions.',
+  },
+  {
+    outcome: 'CS09',
+    description:
+      'An ability to recognize the legal, social, ethical and professional issues involved in the utilization of computer technology and be guided by the adoption of appropriate professional, ethical and legal practices.',
+  },
+  {
+    outcome: 'CS10',
+    description:
+      'Recognize the need, and have the ability, to engage in independent learning for continual development as a computing professional.',
+  },
 ]
 </script>
 

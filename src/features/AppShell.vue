@@ -19,7 +19,7 @@ const navItems = [
       { label: 'Information Technology', to: 'info-tech' },
       { label: 'Digital Media and Interactive Arts', to: 'media-arts' },
       { label: 'Library Information Science', to: 'lib-sci' },
-    ]
+    ],
   },
   { label: 'Faculty and Staff', to: 'faculty-and-staff' },
   { label: 'Event Calendar', to: 'event-calendar' },

@@ -37,7 +37,7 @@ const quickLinks = [
         <h2 class="footer-heading">Contact Us</h2>
         <address class="footer-contact">
           <Row :spacing="8">
-            <Icon icon="mi:email"/>
+            <Icon icon="mi:email" />
             <a href="mailto:ccssec@cpu.edu.ph">ccssec@cpu.edu.ph</a>
           </Row>
           <Row :spacing="8">
