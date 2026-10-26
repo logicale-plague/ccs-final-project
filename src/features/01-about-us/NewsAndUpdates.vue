@@ -1,0 +1,102 @@
+<script setup>
+import { Card, Container, ImageContainer } from '@/features/shared/components'
+import { news } from '@/features/00-home/configs/news'
+</script>
+
+<template>
+  <Container padding="112px 24px 48px">
+    <div class="news-page">
+      <header class="news-header">
+        <h1 class="news-title">News and Updates</h1>
+        <p class="news-subtitle">Be updated with the College and student events.</p>
+      </header>
+
+      <div class="news-list">
+        <Card
+          v-for="article in news"
+          :key="article.title"
+          shadow="sm"
+          :borderWidth="1"
+          borderColor="var(--border)"
+          color="var(--card)"
+          class="news-card"
+        >
+          <ImageContainer :src="article.src" :alt="article.title" width="100%" height="280px" />
+          <div class="news-card-content">
+            <h2>{{ article.title }}</h2>
+            <p class="news-date">{{ article.publishDate }}</p>
+            <p v-for="paragraph in article.excerpt.split('\n\n')" :key="paragraph">
+              {{ paragraph }}
+            </p>
+          </div>
+        </Card>
+      </div>
+    </div>
+  </Container>
+</template>
+
+<style scoped>
+.news-page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.news-header {
+  text-align: center;
+}
+
+.news-title {
+  margin-bottom: 8px;
+  color: var(--foreground);
+  font-size: 36px;
+  font-weight: 700;
+}
+
+.news-subtitle {
+  margin-bottom: 0;
+  color: var(--muted-foreground);
+  font-size: 16px;
+}
+
+.news-list {
+  display: grid;
+  gap: 24px;
+}
+
+.news-card {
+  overflow: hidden;
+}
+
+.news-card :deep(.card-body) {
+  padding: 0;
+}
+
+.news-card-content {
+  padding: 24px;
+}
+
+.news-card-content h2 {
+  margin-bottom: 8px;
+  color: var(--foreground);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.news-card-content p {
+  color: var(--foreground);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.news-card-content .news-date {
+  margin-bottom: 20px;
+  color: var(--muted-foreground);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.news-card-content p:last-child {
+  margin-bottom: 0;
+}
+</style>

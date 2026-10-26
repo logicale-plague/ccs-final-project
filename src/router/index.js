@@ -20,6 +20,31 @@ const router = createRouter({
           component: () => import('@/features/01-about-us/AboutUsView.vue'),
         },
         {
+          path: 'about-us/history',
+          name: 'about-history',
+          component: () => import('@/features/01-about-us/HistoryView.vue'),
+        },
+        {
+          path: 'about-us/vision-and-mission',
+          name: 'about-vision-and-mission',
+          component: () => import('@/features/01-about-us/VisionAndMission.vue'),
+        },
+        {
+          path: 'about-us/message-of-the-dean',
+          name: 'about-message-of-the-dean',
+          component: () => import('@/features/01-about-us/MessageOfTheDean.vue'),
+        },
+        {
+          path: 'about-us/linkages',
+          name: 'about-linkages',
+          component: () => import('@/features/01-about-us/Linkages.vue'),
+        },
+        {
+          path: 'about-us/news-and-updates',
+          name: 'about-news-and-updates',
+          component: () => import('@/features/01-about-us/NewsAndUpdates.vue'),
+        },
+        {
           path: 'academic-programs',
           name: 'academic-programs',
           component: () => import('@/features/02-academic-programs/AcademicProgramsView.vue'),
