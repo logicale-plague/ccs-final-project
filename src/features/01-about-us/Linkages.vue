@@ -5,12 +5,12 @@ import { partners } from '@/features/00-home/configs/partners'
 </script>
 
 <template>
-  <Container padding="112px 24px 48px">
+  <Container>
     <div class="linkages-page">
-      <header class="linkages-header">
+      <Container class="linkages-header" color="var(--secondary)" :padding="{ top: 96, bottom: 64 }">
         <h1 class="linkages-title">Partners and Members</h1>
         <p class="linkages-subtitle">Our academic, industry, and professional partners.</p>
-      </header>
+      </Container>
 
       <div class="partners-grid">
         <Card
@@ -44,15 +44,15 @@ import { partners } from '@/features/00-home/configs/partners'
 }
 
 .linkages-title {
-  margin-bottom: 8px;
-  color: var(--foreground);
+  margin: 0 0 8px;
+  color: var(--secondary-foreground);
   font-size: 36px;
   font-weight: 700;
 }
 
 .linkages-subtitle {
   margin-bottom: 0;
-  color: var(--muted-foreground);
+  color: var(--muted);
   font-size: 16px;
 }
 

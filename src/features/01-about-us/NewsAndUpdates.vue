@@ -4,12 +4,12 @@ import { news } from '@/features/00-home/configs/news'
 </script>
 
 <template>
-  <Container padding="112px 24px 48px">
+  <Container>
     <div class="news-page">
-      <header class="news-header">
+      <Container class="news-header" color="var(--secondary)" :padding="{ top: 96, bottom: 64 }">
         <h1 class="news-title">News and Updates</h1>
         <p class="news-subtitle">Be updated with the College and student events.</p>
-      </header>
+      </Container>
 
       <div class="news-list">
         <Card
@@ -20,6 +20,7 @@ import { news } from '@/features/00-home/configs/news'
           borderColor="var(--border)"
           color="var(--card)"
           class="news-card"
+          :margin="{ x: 192 }"
         >
           <ImageContainer :src="article.src" :alt="article.title" width="100%" height="280px" />
           <div class="news-card-content">
@@ -40,6 +41,7 @@ import { news } from '@/features/00-home/configs/news'
   display: flex;
   flex-direction: column;
   gap: 32px;
+  margin-bottom: 96px;
 }
 
 .news-header {
@@ -47,15 +49,15 @@ import { news } from '@/features/00-home/configs/news'
 }
 
 .news-title {
-  margin-bottom: 8px;
-  color: var(--foreground);
+  margin: 0 0 8px;
+  color: var(--secondary-foreground);
   font-size: 36px;
   font-weight: 700;
 }
 
 .news-subtitle {
   margin-bottom: 0;
-  color: var(--muted-foreground);
+  color: var(--secondary-foreground);
   font-size: 16px;
 }
 

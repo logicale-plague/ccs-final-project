@@ -1,5 +1,5 @@
 <script setup>
-import { Card, Container } from '@/features/shared/components'
+import { Card, Column, Container } from '@/features/shared/components'
 
 const historyParagraphs = [
   'The college began in 1995 with the birth of the Bachelor of Science in Computer Science (BSCS) program under the College of Commerce. The first batch of students was composed of two sections with about 100 students headed by Prof. Mary O’ T. Penetrante.',
@@ -23,22 +23,26 @@ const historyParagraphs = [
 </script>
 
 <template>
-  <Container padding="112px 24px 48px">
-    <Card shadow="sm" :borderWidth="1" borderColor="var(--border)" :padding="32">
-      <h1 class="history-title">College History</h1>
-      <div class="history-content">
-        <p v-for="paragraph in historyParagraphs" :key="paragraph">
-          {{ paragraph }}
-        </p>
-      </div>
-    </Card>
+  <Container>
+    <Column :spacing="32" :margin="{ bottom: 64 }">
+      <Container :padding="{ left: 192, top: 96, bottom: 32 }" color="var(--secondary)" width="100%">
+        <h1 class="history-title">College History</h1>
+      </Container>
+      <Card shadow="sm" :borderWidth="1" borderColor="var(--border)" :padding="32" :margin="{ x: 96 }">
+        <div class="history-content">
+          <p v-for="paragraph in historyParagraphs" :key="paragraph">
+            {{ paragraph }}
+          </p>
+        </div>
+      </Card>
+    </Column>
   </Container>
 </template>
 
 <style scoped>
 .history-title {
   margin-bottom: 32px;
-  color: var(--foreground);
+  color: var(--secondary-foreground);
   font-size: 36px;
   font-weight: 700;
 }
