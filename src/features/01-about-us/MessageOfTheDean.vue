@@ -12,21 +12,31 @@ const messageParagraphs = [
 <template>
   <Container>
     <Column :spacing="32" :margin="{ bottom: 96 }">
-    <Container color="var(--secondary)" :padding="{ top: 96, bottom: 64, left: 192 }" width="100%">
-      <h1 class="dean-message-title">Message Of The Dean</h1>
-    </Container>
-    <Card shadow="sm" :borderWidth="1" borderColor="var(--border)" :padding="32" :margin="{ x: 96 }">
-      <div class="dean-message-content">
-        <p v-for="paragraph in messageParagraphs" :key="paragraph">
-          {{ paragraph }}
-        </p>
+      <Container
+        color="var(--secondary)"
+        :padding="{ top: 96, bottom: 64, left: 192 }"
+        width="100%"
+      >
+        <h1 class="dean-message-title">Message Of The Dean</h1>
+      </Container>
+      <Card
+        shadow="sm"
+        :borderWidth="1"
+        borderColor="var(--border)"
+        :padding="32"
+        :margin="{ x: 96 }"
+      >
+        <div class="dean-message-content">
+          <p v-for="paragraph in messageParagraphs" :key="paragraph">
+            {{ paragraph }}
+          </p>
 
-        <div class="dean-attribution">
-          <strong>Ma. Christina A. Quijano, MSCS</strong>
-          <strong>Dean</strong>
+          <div class="dean-attribution">
+            <strong>Ma. Christina A. Quijano, MSCS</strong>
+            <strong>Dean</strong>
+          </div>
         </div>
-      </div>
-    </Card>
+      </Card>
     </Column>
   </Container>
 </template>

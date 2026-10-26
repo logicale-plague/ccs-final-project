@@ -27,10 +27,20 @@ const sections = [
 <template>
   <Container>
     <Column :spacing="32" :margin="{ bottom: 64 }">
-      <Container color="var(--secondary)" :padding="{ left: 192, top: 96, bottom: 64 }" width="100%">
+      <Container
+        color="var(--secondary)"
+        :padding="{ left: 192, top: 96, bottom: 64 }"
+        width="100%"
+      >
         <h1 class="vision-mission-title">Vision and Mission</h1>
       </Container>
-      <Card shadow="sm" :borderWidth="1" borderColor="var(--border)" :padding="32" :margin="{ x: 96 }">
+      <Card
+        shadow="sm"
+        :borderWidth="1"
+        borderColor="var(--border)"
+        :padding="32"
+        :margin="{ x: 96 }"
+      >
         <section v-for="section in sections" :key="section.title" class="vision-mission-section">
           <h2>{{ section.title }}</h2>
           <p v-for="paragraph in section.paragraphs" :key="paragraph">

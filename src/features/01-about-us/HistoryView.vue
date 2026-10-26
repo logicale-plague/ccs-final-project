@@ -25,10 +25,20 @@ const historyParagraphs = [
 <template>
   <Container>
     <Column :spacing="32" :margin="{ bottom: 64 }">
-      <Container :padding="{ left: 192, top: 96, bottom: 32 }" color="var(--secondary)" width="100%">
+      <Container
+        :padding="{ left: 192, top: 96, bottom: 32 }"
+        color="var(--secondary)"
+        width="100%"
+      >
         <h1 class="history-title">College History</h1>
       </Container>
-      <Card shadow="sm" :borderWidth="1" borderColor="var(--border)" :padding="32" :margin="{ x: 96 }">
+      <Card
+        shadow="sm"
+        :borderWidth="1"
+        borderColor="var(--border)"
+        :padding="32"
+        :margin="{ x: 96 }"
+      >
         <div class="history-content">
           <p v-for="paragraph in historyParagraphs" :key="paragraph">
             {{ paragraph }}

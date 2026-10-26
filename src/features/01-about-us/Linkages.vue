@@ -7,7 +7,11 @@ import { partners } from '@/features/00-home/configs/partners'
 <template>
   <Container>
     <div class="linkages-page">
-      <Container class="linkages-header" color="var(--secondary)" :padding="{ top: 96, bottom: 64 }">
+      <Container
+        class="linkages-header"
+        color="var(--secondary)"
+        :padding="{ top: 96, bottom: 64 }"
+      >
         <h1 class="linkages-title">Partners and Members</h1>
         <p class="linkages-subtitle">Our academic, industry, and professional partners.</p>
       </Container>
